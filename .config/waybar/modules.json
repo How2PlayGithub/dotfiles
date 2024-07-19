@@ -1,5 +1,4 @@
 {
-    "font": "/usr/share/fonts/TTF/HackNerdFont-Regular.ttf",
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
