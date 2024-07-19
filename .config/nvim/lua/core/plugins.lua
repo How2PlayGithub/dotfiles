@@ -37,7 +37,8 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "smartpde/telescope-recent-files",
-            "tom-anders/telescope-vim-bookmarks.nvim"
+            "tom-anders/telescope-vim-bookmarks.nvim",
+            "BurntSushi/ripgrep"
         }
     },
 

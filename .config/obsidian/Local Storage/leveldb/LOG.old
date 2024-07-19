@@ -1,3 +1,6 @@
-2024/07/15-21:48:50.260 907 Reusing MANIFEST /home/earthii/.config/obsidian/Local Storage/leveldb/MANIFEST-000001
-2024/07/15-21:48:50.270 907 Recovering log #15
-2024/07/15-21:48:50.271 907 Reusing old log /home/earthii/.config/obsidian/Local Storage/leveldb/000015.log 
+2024/07/17-12:02:33.662 e45ec Reusing MANIFEST /home/earthii/.config/obsidian/Local Storage/leveldb/MANIFEST-000001
+2024/07/17-12:02:33.673 e45ec Recovering log #15
+2024/07/17-12:02:33.674 e45ec Reusing old log /home/earthii/.config/obsidian/Local Storage/leveldb/000015.log 
+2024/07/18-05:03:06.726 e45ed Level-0 table #20: started
+2024/07/18-05:03:06.735 e45ed Level-0 table #20: 7626 bytes OK
+2024/07/18-05:03:06.738 e45ed Delete type=0 #15
