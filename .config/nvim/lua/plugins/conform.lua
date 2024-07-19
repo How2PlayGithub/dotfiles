@@ -10,3 +10,9 @@ require("conform").setup({
         timeout_ms = 500,
     }
 })
+
+require("conform").formatters.shfmt = {
+    prepend_args = function(ctx)
+        return { "--indent", tostring(vim.bo[ctx.buf].shiftwidth) }
+    end
+}
