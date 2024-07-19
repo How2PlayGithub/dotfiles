@@ -1,4 +1,5 @@
 {
+    "font": "/usr/share/fonts/TTF/HackNerdFont-Regular.ttf",
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -62,6 +63,22 @@
         "tooltip-format-ethernet": "{ifname}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50
+    },
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "<span foreground=\"#3D484D\">|</span> {icon} {capacity}%",
+        "format-charging": "<span foreground=\"#3D484D\">|</span>  {capacity}%",
+        "format-plugged": "<span foreground=\"#3D484D\">|</span>  {capacity}%",
+        "format-icons": [
+            "󰠉",
+            "󰠋",
+            "󰠍",
+            "󰠏",
+            "󰂄"
+        ]
     },
     "hyprland/language": {
         "format": "<span foreground=\"#A7C080\">󰌌</span> {short} <span foreground=\"#3D484D\">|</span>"

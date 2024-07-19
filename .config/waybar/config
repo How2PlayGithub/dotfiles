@@ -22,7 +22,8 @@
         "modules": [
             "backlight",
             "pulseaudio",
-            "network"
+            "network",
+            "battery"
         ]
     },
 

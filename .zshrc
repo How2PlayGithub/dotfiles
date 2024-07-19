@@ -84,7 +84,7 @@ alias clock='tty-clock -b -c -C 7'
 
 alias py='python3'
 
-alias sshHome='ssh sshd@222.154.242.58 -oHostKeyAlgorithms=+ssh-dss'
+alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 
 export LESS='-R --use-color -Dd+r$Du+b'
 export MANPAGER='less -R --use-color -Dd+r -Du+b'
