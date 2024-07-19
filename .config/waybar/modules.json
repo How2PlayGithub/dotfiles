@@ -22,8 +22,8 @@
         "max-length": 100
     },
     "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%a, %d. %b %Y - %H:%M}"
+        "format": "{:%a, %d %b %Y - %H:%M}",
+        "format-alt": "{:%H:%M}"
     },
     "backlight": {
         "device": "intel_backlight",

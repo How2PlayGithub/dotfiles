@@ -17,7 +17,6 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate"
     },
     {
         "hrsh7th/nvim-cmp",
@@ -61,5 +60,5 @@ return {
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
-    }
+    },
 }
