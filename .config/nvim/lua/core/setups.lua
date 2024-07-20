@@ -23,3 +23,4 @@ require("ibl").setup({
 })
 
 require("colorizer").setup()
+require("todo-comments").setup()

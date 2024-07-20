@@ -1,6 +1,3 @@
-2024/07/17-12:02:34.952 e45ec Reusing MANIFEST /home/earthii/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/17-12:02:34.953 e45ec Recovering log #3
-2024/07/17-12:02:34.962 e45ec Reusing old log /home/earthii/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000003.log 
-2024/07/17-22:21:12.148 e45ec Level-0 table #5: started
-2024/07/17-22:21:12.168 e45ec Level-0 table #5: 1321991 bytes OK
-2024/07/17-22:21:12.170 e45ec Delete type=0 #3
+2024/07/19-16:42:55.215 39e Reusing MANIFEST /home/earthii/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/19-16:42:55.215 39e Recovering log #4
+2024/07/19-16:42:55.230 39e Reusing old log /home/earthii/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000004.log 
