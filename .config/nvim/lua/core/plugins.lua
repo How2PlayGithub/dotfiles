@@ -5,9 +5,10 @@ return {
         priority = 1000,
     },
 
+    "sakura-theme/vim",
+
     "goolord/alpha-nvim",
     "nvim-lualine/lualine.nvim",
-
     "mbbill/undotree",
     "stevearc/conform.nvim",
 
@@ -44,6 +45,9 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+
+    "lervag/vimtex",
+    "Shougo/deoplete.nvim",
 
     "windwp/nvim-autopairs",
     "alvan/vim-closetag",

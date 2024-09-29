@@ -40,10 +40,26 @@ require("nvim-treesitter.configs").setup({
         -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
         disable = function(lang, buf)
             local max_filesize = 100 * 1024 -- 100 KB
+
+            -- Get the file name and check its stats
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
+            if not ok or not stats then
+                return false
+            end
+
+            -- Check if the file size exceeds the maximum allowed size
+            if stats.size > max_filesize then
                 return true
             end
+
+            -- Check if the file is a LaTeX file based on its extension
+            local file_name = vim.api.nvim_buf_get_name(buf)
+            local ext = file_name:match("%.([%w]+)$")
+            if ext and ext:lower() == 'tex' then
+                return true
+            end
+
+            return false
         end,
         additional_vim_regex_highlighting = false,
     },

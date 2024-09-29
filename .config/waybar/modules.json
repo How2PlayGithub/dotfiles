@@ -18,7 +18,7 @@
         "active-only": false
     },
     "hyprland/window": {
-        "format": "<span foreground=\"#A7C080\"> </span> {}",
+        "format": "<span foreground=\"#FFB7C6\"> </span> {}",
         "max-length": 100
     },
     "clock": {
@@ -27,7 +27,7 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "<span foreground=\"#A7C080\">{icon}</span> {percent}% ",
+        "format": "<span foreground=\"#FFB7C6\">{icon}</span> {percent}% ",
         "format-icons": [
             "",
             ""
@@ -36,9 +36,9 @@
         "tooltip-format": "Brightness"
     },
     "pulseaudio": {
-        "format": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#A7C080\">{icon}</span> {volume}% ",
-        "format-bluetooth": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#A7C080\"></span> {volume}% ",
-        "format-muted": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#A7C080\"></span> ",
+        "format": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#FFB7C6\">{icon}</span> {volume}% ",
+        "format-bluetooth": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#FFB7C6\"></span> {volume}% ",
+        "format-muted": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#FFB7C6\"></span> ",
         "format-icons": {
             "headphone": "",
             "default": [
@@ -54,8 +54,8 @@
     },
     "network": {
         "format": "<span foreground=\"#3D484D\">|</span> {ifname}",
-        "format-wifi": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#A7C080\"></span> {signalStrength}%",
-        "format-ethernet": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#A7C080\">󰊗</span> {ipaddr}/{cidr}",
+        "format-wifi": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#FFB7C6\"></span> {signalStrength}%",
+        "format-ethernet": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#FFB7C6\">󰊗</span> {ipaddr}/{cidr}",
         "format-disconnected": "",
         "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
@@ -68,7 +68,7 @@
             "warning": 50,
             "critical": 20
         },
-        "format": "<span foreground=\"#3D484D\">|</span> {icon} {capacity}%",
+        "format": "<span foreground=\"#3D484D\">|</span> <span foreground =\"#FFB7C6\"> {icon} </span> {capacity}%",
         "format-charging": "<span foreground=\"#3D484D\">|</span>  {capacity}%",
         "format-plugged": "<span foreground=\"#3D484D\">|</span>  {capacity}%",
         "format-icons": [
@@ -80,11 +80,11 @@
         ]
     },
     "hyprland/language": {
-        "format": "<span foreground=\"#A7C080\">󰌌</span> {short} <span foreground=\"#3D484D\">|</span>"
+        "format": "<span foreground=\"#FFB7C6\">󰌌</span> {short} <span foreground=\"#3D484D\">|</span>"
     },
     "keyboard-state": {
         "capslock": true,
-        "format": " <span foreground=\"#A7C080\">󰪛</span> {icon}",
+        "format": " <span foreground=\"#FFB7C6\">󰪛</span> {icon}",
         "format-icons": {
             "locked": "",
             "unlocked": ""
@@ -92,14 +92,14 @@
     },
     "disk": {
         "interval": 30,
-        "format": "<span foreground=\"#A7C080\" weight=\"bold\">/</span> {percentage_used}% ",
+        "format": "<span foreground=\"#FFB7C6\" weight=\"bold\">/</span> {percentage_used}% ",
         "path": "/"
     },
     "cpu": {
-        "format": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#A7C080\" weight=\"bold\">CPU</span> {usage}% "
+        "format": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#FFB7C6\" weight=\"bold\">CPU</span> {usage}% "
     },
     "memory": {
-        "format": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#A7C080\" weight=\"bold\">RAM</span> {}% "
+        "format": "<span foreground=\"#3D484D\">|</span> <span foreground=\"#FFB7C6\" weight=\"bold\">RAM</span> {}% "
     },
     "custom/wlogout": {
         "format": "⏻",

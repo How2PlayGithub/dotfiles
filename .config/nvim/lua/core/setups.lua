@@ -26,3 +26,9 @@ require("colorizer").setup()
 require("todo-comments").setup()
 
 vim.cmd("packadd cfilter")
+
+vim.cmd([[
+  call deoplete#custom#var('omni', 'input_patterns', {
+        \ 'tex': g:vimtex#re#deoplete
+        \})
+]])

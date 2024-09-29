@@ -57,3 +57,10 @@ g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
+
+g.vimtex_view_method = "zathura"
+
+opt.foldmethod = "expr"
+opt.foldexpr = "vimtex#fold#level(v:lnum)"
+opt.foldtext = "vimtex#fold#text()"
+opt.foldlevel = 2
