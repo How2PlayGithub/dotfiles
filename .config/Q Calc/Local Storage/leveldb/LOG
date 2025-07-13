@@ -1,0 +1,5 @@
+2024/12/24-10:15:50.826 18a0 Reusing MANIFEST /home/aurevelle/.config/Q Calc/Local Storage/leveldb/MANIFEST-000001
+2024/12/24-10:15:50.832 18a0 Recovering log #3
+2024/12/24-10:15:50.832 18a0 Level-0 table #3: started
+2024/12/24-10:15:50.837 18a0 Level-0 table #3: 21254 bytes OK
+2024/12/24-10:15:50.842 18a0 Delete type=0 #3

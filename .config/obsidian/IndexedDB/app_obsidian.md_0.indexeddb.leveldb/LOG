@@ -1,0 +1,12 @@
+2025/06/20-14:10:33.207 b22 Reusing MANIFEST /home/aurevelle/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2025/06/20-14:10:33.207 b22 Recovering log #44
+2025/06/20-14:10:33.217 b22 Reusing old log /home/aurevelle/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000044.log 
+2025/06/20-14:20:34.289 b23 Level-0 table #50: started
+2025/06/20-14:20:34.301 b23 Level-0 table #50: 1262359 bytes OK
+2025/06/20-14:20:34.307 b23 Delete type=0 #44
+2025/06/20-14:22:17.170 b23 Compacting 1@1 + 1@2 files
+2025/06/20-14:22:17.187 b23 Generated table #51@1: 3262 keys, 701204 bytes
+2025/06/20-14:22:17.187 b23 Compacted 1@1 + 1@2 files => 701204 bytes
+2025/06/20-14:22:17.192 b23 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/06/20-14:22:17.192 b23 Delete type=2 #50
+2025/06/20-14:22:17.192 b23 Delete type=2 #47

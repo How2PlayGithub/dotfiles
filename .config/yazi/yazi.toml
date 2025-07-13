@@ -1,0 +1,10 @@
+[mgr]
+show_hidden = true
+
+[plugin]
+
+fetchers = [
+	{ id = "current-size", name = "*/", run = "current-size", prio = "normal" },
+	{ id = "current-size", name = "*", run = "current-size",prio = "normal" },
+]
+

@@ -1,0 +1,5 @@
+2025/01/09-00:22:42.623 4 Reusing MANIFEST /home/aurevelle/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2025/01/09-00:22:42.631 4 Recovering log #3
+2025/01/09-00:22:42.631 4 Level-0 table #3: started
+2025/01/09-00:22:42.637 4 Level-0 table #3: 69622 bytes OK
+2025/01/09-00:22:42.656 4 Delete type=0 #3
