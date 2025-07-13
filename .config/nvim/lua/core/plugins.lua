@@ -99,6 +99,7 @@ return {
     "sitiom/nvim-numbertoggle",
     event = "VeryLazy",
     },
+
     "mluders/comfy-line-numbers.nvim",
 
     require("plugins.which-key"),
