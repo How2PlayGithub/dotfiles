@@ -1,0 +1,14 @@
+{
+    "discordBranch": "canary",
+    "minimizeToTray": true,
+    "arRPC": true,
+    "splashColor": "rgb(255, 255, 255)",
+    "splashBackground": "rgb(15, 19, 24)",
+    "spellCheckLanguages": [
+        "en-US",
+        "en"
+    ],
+    "hardwareAcceleration": false,
+    "customTitleBar": false,
+    "staticTitle": true
+}

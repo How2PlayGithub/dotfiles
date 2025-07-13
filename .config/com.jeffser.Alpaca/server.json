@@ -1,0 +1,15 @@
+{
+      "remote_url": "",
+      "remote_bearer_token": "",
+      "run_remote": false,
+      "local_port": 11435,
+      "run_on_background": false,
+      "powersaver_warning": true,
+      "model_tweaks": {
+            "temperature": 0.7,
+            "seed": 0,
+            "keep_alive": 5
+      },
+      "ollama_overrides": {},
+      "idle_timer": 0
+}

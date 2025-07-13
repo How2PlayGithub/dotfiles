@@ -1,0 +1,9 @@
+2024-09-29 22:20:26.158 [info] Started initializing default profile extensions in extensions installation folder. file:///home/aurevelle/.vscode-oss/extensions
+2024-09-29 22:20:26.250 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/aurevelle/.vscode-oss/extensions
+2024-09-29 22:20:26.366 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/aurevelle/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/aurevelle/.vscode-oss/extensions/extensions.json.vsctmp'
+    at o.create (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19406)
+    at u (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19517)
+    at $.hb (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:36674)
+    at $.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:29001)
+    at async c.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:14931)
+    at async W.ub (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:105:120356)
