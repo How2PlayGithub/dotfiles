@@ -95,8 +95,11 @@ return {
         build = function() vim.fn["mkdp#util#install"]() end,
     },
 
+    {
     "sitiom/nvim-numbertoggle",
-    'mluders/comfy-line-numbers.nvim',
+    event = "VeryLazy",
+    },
+    "mluders/comfy-line-numbers.nvim",
 
     require("plugins.which-key"),
     require("plugins.snacks"),
