@@ -154,8 +154,6 @@
             "aurevelle@archlinux:(.*)": "$1 ",
             "(.*) — Mozilla Firefox": "$1 󰈹",
             "(.*)Mozilla Firefox": "Firefox 󰈹",
-            "(.*) - qutebrowser": "$1 ",
-            "(.*nvim.*)": "$1 ",
             "(.*) - Visual Studio Code": "$1 󰨞",
             "(.*)Visual Studio Code": "Code 󰨞",
             "(.*) — Dolphin": "$1 󰉋",

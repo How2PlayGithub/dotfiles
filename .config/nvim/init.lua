@@ -12,6 +12,7 @@ require("core.settings")
 require("core.setups")
 require("core.mappings")
 require("core.scripts")
+require("core.autocmds")
 
 require("plugins.comfy-lines")
 require("plugins.mason")
