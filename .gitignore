@@ -1,2 +1,3 @@
 .config/vesktop/Singleton*
 .config/vesktop/SessionData/*
+.config/vesktop/sessionData/
