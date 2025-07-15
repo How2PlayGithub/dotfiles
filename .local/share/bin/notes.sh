@@ -30,7 +30,7 @@ rofiprompt() {
 newnote() {
     name=$(rofiprompt "Name: ")
     [ -z "$name" ] && name=$(date +%F_%T | tr ':' '-')
-    wezterm start -- nvim "$folder/$name" >/dev/null 2>&1
+    setsid -f wezterm start -- nvim "$folder/$name".md >/dev/null 2>&1
 }
 
 sync() {
@@ -44,7 +44,7 @@ selected() {
     case $choice in
         " SYNC TO BUTTERFLY") sync ;;
         "󰎞 NEW NOTE") newnote ;;
-        *.md) setsid -f "$TERMINAL" -e nvim "$folder/$choice" >/dev/null 2>&1 ;;
+        *.md) setsid -f wezterm start -- nvim "$folder/$choice" >/dev/null 2>&1 ;;
         *) exit ;;
     esac
 }
