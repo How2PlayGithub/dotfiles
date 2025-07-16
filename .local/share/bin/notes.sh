@@ -1,6 +1,7 @@
 #!/bin/sh
 
-folder="$HOME/valley of riches/Notes/"
+schoolfolder="$HOME/valley of riches/My Notes/"
+personalfolder="$HOME/valley of riches/Notes/"
 SSHPASSWORD="$(pass ssh/butterfly)"
 
 scrDir="$(dirname "$(realpath "$0")")"
@@ -27,26 +28,50 @@ rofiprompt() {
          -p "$1"
 }
 
-newnote() {
+schoolnewnote() {
     name=$(rofiprompt "Name: ")
     [ -z "$name" ] && name=$(date +%F_%T | tr ':' '-')
-    setsid -f wezterm start -- nvim "$folder/$name".md >/dev/null 2>&1
+    setsid -f wezterm start -- nvim "$schoolfolder/$name".md >/dev/null 2>&1
+}
+
+personalnewnote() {
+    name=$(rofiprompt "Name: ")
+    [ -z "$name" ] && name=$(date +%F_%T | tr ':' '-')
+    setsid -f wezterm start -- nvim "$personalfolder/$name".md >/dev/null 2>&1
 }
 
 sync() {
-    sshpass -p $SSHPASSWORD rsync -rtu "$HOME/valley of riches/" butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ && \
-    sshpass -p $SSHPASSWORD rsync -rtu butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ "$HOME/valley of riches/" && \
+    sshpass -p "$SSHPASSWORD" rsync -rtu "$HOME/valley of riches/" butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ && \
+    sshpass -p "$SSHPASSWORD" rsync -rtu butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ "$HOME/valley of riches/" && \
     notify-send "Notes sync with butterfly completed."
 }
 
 selected() {
-    choice=$(printf "󰎞 NEW NOTE\n SYNC TO BUTTERFLY\n%s" "$(ls -t1 "$folder")" | rofiprompt "Notes menu:")
+    allnotes=$( (ls -t1 "$personalfolder"; ls -t1 "$schoolfolder") | sort -r | uniq )
+    choice=$(printf "󰎞 NEW SCHOOL NOTE\n󰎞 NEW PERSONAL NOTE\n SEARCH PERSONAL NOTES\n SEARCH SCHOOL NOTES\n SYNC TO BUTTERFLY\n%s\n" "$allnotes" | rofiprompt "Notes menu:")
+
     case $choice in
         " SYNC TO BUTTERFLY") sync ;;
-        "󰎞 NEW NOTE") newnote ;;
-        *.md) setsid -f wezterm start -- nvim "$folder/$choice" >/dev/null 2>&1 ;;
+        "󰎞 NEW SCHOOL NOTE") schoolnewnote ;;
+        "󰎞 NEW PERSONAL NOTE") personalnewnote ;;
+        " SEARCH PERSONAL NOTES")
+            personal=$(ls -t1 "$personalfolder" | rofiprompt "Personal Notes:")
+            [ -n "$personal" ] && setsid -f wezterm start -- nvim "$personalfolder/$personal" >/dev/null 2>&1
+            ;;
+        " SEARCH SCHOOL NOTES")
+            school=$(ls -t1 "$schoolfolder" | rofiprompt "School Notes:")
+            [ -n "$school" ] && setsid -f wezterm start -- nvim "$schoolfolder/$school" >/dev/null 2>&1
+            ;;
+        *.md)
+            if [ -f "$personalfolder/$choice" ]; then
+                setsid -f wezterm start -- nvim "$personalfolder/$choice" >/dev/null 2>&1
+            elif [ -f "$schoolfolder/$choice" ]; then
+                setsid -f wezterm start -- nvim "$schoolfolder/$choice" >/dev/null 2>&1
+            fi
+            ;;
         *) exit ;;
     esac
 }
 
 selected
+
