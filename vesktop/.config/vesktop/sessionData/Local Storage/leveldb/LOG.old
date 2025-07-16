@@ -1,0 +1,20 @@
+2025/07/15-11:59:31.334 354f Reusing MANIFEST /home/aurevelle/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
+2025/07/15-11:59:31.349 354f Recovering log #2080
+2025/07/15-11:59:31.349 354f Reusing old log /home/aurevelle/.config/vesktop/sessionData/Local Storage/leveldb/002080.log 
+2025/07/15-11:59:31.350 354f Delete type=0 #2064
+2025/07/15-11:59:31.350 354f Delete type=2 #2066
+2025/07/15-12:00:31.356 3550 Level-0 table #2084: started
+2025/07/15-12:00:31.368 3550 Level-0 table #2084: 49135 bytes OK
+2025/07/15-12:00:31.377 3550 Delete type=0 #2080
+2025/07/15-12:01:31.738 3550 Level-0 table #2086: started
+2025/07/15-12:01:31.758 3550 Level-0 table #2086: 89148 bytes OK
+2025/07/15-12:01:31.766 3550 Delete type=0 #2083
+2025/07/15-12:01:31.767 3550 Compacting 4@0 + 1@1 files
+2025/07/15-12:01:31.777 3550 Generated table #2087@0: 256 keys, 228854 bytes
+2025/07/15-12:01:31.777 3550 Compacted 4@0 + 1@1 files => 228854 bytes
+2025/07/15-12:01:31.784 3550 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/07/15-12:01:31.785 3550 Delete type=2 #2084
+2025/07/15-12:01:31.785 3550 Delete type=2 #2086
+2025/07/15-12:01:31.785 3550 Delete type=2 #2081
+2025/07/15-12:01:31.785 3550 Delete type=2 #2076
+2025/07/15-12:01:31.785 3550 Delete type=2 #2079
