@@ -43,7 +43,7 @@ personalnewnote() {
 sync() {
     sshpass -p "$SSHPASSWORD" rsync -rtu "$HOME/valley of riches/" butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ && \
     sshpass -p "$SSHPASSWORD" rsync -rtu butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ "$HOME/valley of riches/" && \
-    notify-send "Notes sync with butterfly completed."
+    notify-send "Finished sync with butterfly!"
 }
 
 selected() {

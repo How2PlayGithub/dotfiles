@@ -76,6 +76,7 @@ alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code' # gui code editor
 alias btry='upower -i $(upower -e | grep BAT)' # battery checker
+alias cal='calcure' # calendar
 
 # Directory navigation shortcuts
 alias cd='z'
@@ -121,7 +122,6 @@ alias q='exit'
 alias zel='zellij'
 alias zela='zellij a home'
 
-# Gay cmd
 alias gae='~/.local/share/bin/gae.sh'
 
 alias waybar='killall waybar 2>/dev/null; hyprctl dispatch exec waybar &'
