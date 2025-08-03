@@ -24,3 +24,5 @@ require("plugins.telescope")
 require("plugins.snacks")
 require("plugins.screenkey")
 require("plugins.pomo")
+require("plugins.render-markdown")
+

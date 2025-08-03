@@ -45,7 +45,7 @@ require('obsidian').setup({
     },
 
     notes_subdir = "Notes",
-    new_notes_location = "notes_subdir",
+    new_notes_location = "~/valley of riches/My Notes/",
 
     templates = {
         folder = "999- Templates",
@@ -54,5 +54,5 @@ require('obsidian').setup({
     },
 
     disable_frontmatter = true,
+    ui = { enable = false }
 })
-

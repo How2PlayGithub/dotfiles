@@ -31,7 +31,10 @@ return {
     },
 
     -- Treesitter
-    "nvim-treesitter/nvim-treesitter",
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+    },
 
     -- LSP stuff
     "williamboman/mason.nvim",
@@ -57,8 +60,15 @@ return {
     },
     "Shougo/deoplete.nvim",
 
+
     -- Obsidian
-    require("plugins.render-markdown"),
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
     require("plugins.obsidian"),
 
     -- VimTex
@@ -70,6 +80,9 @@ return {
             g.vimtex_compiler_method = 'latexrun'
         end
     },
+
+    -- Arduino
+    require("plugins.arduino"),
 
     -- Utils
     require("plugins.todo"),
@@ -88,13 +101,6 @@ return {
     },
 
     "lervag/vimtex",
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
-        build = function() vim.fn["mkdp#util#install"]() end,
-    },
-
     "mluders/comfy-line-numbers.nvim",
 
     require("plugins.which-key"),

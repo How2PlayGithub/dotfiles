@@ -12,7 +12,7 @@ require("mason-lspconfig").setup({
         "html",
         "jsonls",
         "lua_ls",
-        "marksman",
+        -- "marksman",
         "pylsp",
         "rust_analyzer",
         "sqlls",

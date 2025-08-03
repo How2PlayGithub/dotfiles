@@ -2,7 +2,7 @@
     "discordBranch": "canary",
     "minimizeToTray": true,
     "arRPC": true,
-    "splashColor": "rgb(255, 255, 255)",
+    "splashColor": "rgb(223, 224, 226)",
     "splashBackground": "rgb(15, 19, 24)",
     "spellCheckLanguages": [
         "en-US",

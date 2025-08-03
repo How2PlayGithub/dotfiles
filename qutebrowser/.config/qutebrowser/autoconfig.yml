@@ -64,6 +64,7 @@ settings:
     https://gemini.google.com: access-paste
     https://github.com: access-paste
     https://portfolio.kylerassweiler.ca: access-paste
+    https://projecthub.arduino.cc: access-paste
     https://www.boot.dev: access-paste
     https://www.josean.com: access-paste
   content.javascript.enabled:

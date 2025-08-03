@@ -46,22 +46,32 @@ sync() {
     notify-send "Finished sync with butterfly!"
 }
 
+search_school() {
+    local choice=$(find "$schoolfolder" -name "*.md" -type f | sed "s|^${schoolfolder}||" | rofiprompt "Search School Notes:")
+
+    if [ -n "$choice" ]; then
+        setsid -f wezterm start -- nvim "${schoolfolder}${choice}" >/dev/null 2>&1
+    fi
+}
+
+search_personal() {
+    local choice=$(find "$personalfolder" -name "*.md" -type f | sed "s|^${personalfolder}||" | rofiprompt "Search Personal Notes:")
+    if [ -n "$choice" ]; then
+        setsid -f wezterm start -- nvim "${personalfolder}${choice}" >/dev/null 2>&1
+    fi
+}
+
+
 selected() {
     allnotes=$( (ls -t1 "$personalfolder"; ls -t1 "$schoolfolder") | sort -r | uniq )
-    choice=$(printf "󰎞 NEW SCHOOL NOTE\n󰎞 NEW PERSONAL NOTE\n SEARCH PERSONAL NOTES\n SEARCH SCHOOL NOTES\n SYNC TO BUTTERFLY\n%s\n" "$allnotes" | rofiprompt "Notes menu:")
+    choice=$(printf "󰎞 NEW SCHOOL NOTE\n󰎞 NEW PERSONAL NOTE\n SEARCH PERSONAL NOTES\n SEARCH SCHOOL NOTES\n SYNC TO BUTTERFLY\n%s\n" | rofiprompt "Notes menu:")
 
     case $choice in
         " SYNC TO BUTTERFLY") sync ;;
         "󰎞 NEW SCHOOL NOTE") schoolnewnote ;;
         "󰎞 NEW PERSONAL NOTE") personalnewnote ;;
-        " SEARCH PERSONAL NOTES")
-            personal=$(ls -t1 "$personalfolder" | rofiprompt "Personal Notes:")
-            [ -n "$personal" ] && setsid -f wezterm start -- nvim "$personalfolder/$personal" >/dev/null 2>&1
-            ;;
-        " SEARCH SCHOOL NOTES")
-            school=$(ls -t1 "$schoolfolder" | rofiprompt "School Notes:")
-            [ -n "$school" ] && setsid -f wezterm start -- nvim "$schoolfolder/$school" >/dev/null 2>&1
-            ;;
+        " SEARCH PERSONAL NOTES") search_personal ;;
+        " SEARCH SCHOOL NOTES") search_school ;;
         *.md)
             if [ -f "$personalfolder/$choice" ]; then
                 setsid -f wezterm start -- nvim "$personalfolder/$choice" >/dev/null 2>&1
@@ -74,4 +84,3 @@ selected() {
 }
 
 selected
-

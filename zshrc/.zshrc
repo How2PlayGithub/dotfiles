@@ -113,6 +113,7 @@ function y() {
 
 # Neovim
 alias v='nvim'
+alias vi='nvim .'
 alias vim='nvim'
 
 # Quit
@@ -150,5 +151,6 @@ export MANPAGER='nvim +Man!'
 
 export PATH=$PATH:$HOME/.local/go/bin
 export PATH=$PATH:$HOME/go/bin
+export ZEIT_DB=$HOME/.config/zeit.db
 
 eval "$(zoxide init zsh)"
