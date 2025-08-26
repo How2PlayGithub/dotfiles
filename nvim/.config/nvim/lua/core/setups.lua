@@ -45,10 +45,10 @@ require('obsidian').setup({
     },
 
     notes_subdir = "Notes",
-    new_notes_location = "~/valley of riches/My Notes/",
+    new_notes_location = "~/valley of riches/Notes/",
 
     templates = {
-        folder = "999- Templates",
+        folder = "~/valley of riches/99 - Meta/Templates/",
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
     },

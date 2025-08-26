@@ -1,4 +1,4 @@
-// Vencord cb36cf5
+// Vencord 76a60e0
 // Standalone: true
 // Platform: Universal
 // Updater Disabled: false

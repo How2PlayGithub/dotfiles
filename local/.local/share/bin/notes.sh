@@ -1,9 +1,15 @@
 #!/bin/sh
 
-schoolfolder="$HOME/valley of riches/My Notes/"
-personalfolder="$HOME/valley of riches/Notes/"
+# --- CONFIGURATION ---
+# The root of your new vault structure
+mainvault="$HOME/valley of riches/"
+
+personalfolder="${mainvault}/Notes/"
+knowledgefolder="${mainvault}/02 - Knowledge/"
+
 SSHPASSWORD="$(pass ssh/butterfly)"
 
+# --- SCRIPT SETUP ---
 scrDir="$(dirname "$(realpath "$0")")"
 . "${scrDir}/globalcontrol.sh"
 
@@ -19,6 +25,7 @@ r_scale="configuration { font: \"JetBrainsMono Nerd Font ${rofiScale}\"; }"
 i_override=$(gsettings get org.gnome.desktop.interface icon-theme | sed "s/'//g")
 i_override="configuration { icon-theme: \"${i_override}\"; }"
 
+# --- HELPER FUNCTIONS ---
 rofiprompt() {
     rofi -dmenu \
          -theme-str "$r_scale" \
@@ -28,29 +35,38 @@ rofiprompt() {
          -p "$1"
 }
 
-schoolnewnote() {
-    name=$(rofiprompt "Name: ")
+# --- CORE FUNCTIONS ---
+knowledgenewnote() {
+    local subjects=$(find "$knowledgefolder" -mindepth 1 -maxdepth 1 -type d -printf "%f\n")
+    local subject_choice=$(printf "%s" "$subjects" | rofiprompt "Subject: ")
+
+    [ -z "$subject_choice" ] && exit 0
+
+    local subject_path="${knowledgefolder}/${subject_choice}"
+
+    local name=$(rofiprompt "Name: ")
     [ -z "$name" ] && name=$(date +%F_%T | tr ':' '-')
-    setsid -f wezterm start -- nvim "$schoolfolder/$name".md >/dev/null 2>&1
+
+    setsid -f wezterm start -- nvim "${subject_path}/${name}.md" >/dev/null 2>&1
 }
 
 personalnewnote() {
-    name=$(rofiprompt "Name: ")
+    local name=$(rofiprompt "Name: ")
     [ -z "$name" ] && name=$(date +%F_%T | tr ':' '-')
     setsid -f wezterm start -- nvim "$personalfolder/$name".md >/dev/null 2>&1
 }
 
 sync() {
-    sshpass -p "$SSHPASSWORD" rsync -rtu "$HOME/valley of riches/" butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ && \
-    sshpass -p "$SSHPASSWORD" rsync -rtu butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ "$HOME/valley of riches/" && \
+    sshpass -p "$SSHPASSWORD" rsync -rtu "$mainvault" butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ && \
+    sshpass -p "$SSHPASSWORD" rsync -rtu butterfly:/mnt/HD/HD_a2/butterfly/valley\ of\ riches/ "$mainvault" && \
     notify-send "Finished sync with butterfly!"
 }
 
-search_school() {
-    local choice=$(find "$schoolfolder" -name "*.md" -type f | sed "s|^${schoolfolder}||" | rofiprompt "Search School Notes:")
+search_knowledge() {
+    local choice=$(find "$knowledgefolder" -name "*.md" -type f | sed "s|^${knowledgefolder}||" | rofiprompt "Search Knowledge:")
 
     if [ -n "$choice" ]; then
-        setsid -f wezterm start -- nvim "${schoolfolder}${choice}" >/dev/null 2>&1
+        setsid -f wezterm start -- nvim "${knowledgefolder}${choice}" >/dev/null 2>&1
     fi
 }
 
@@ -61,24 +77,16 @@ search_personal() {
     fi
 }
 
-
+# --- MAIN MENU ---
 selected() {
-    allnotes=$( (ls -t1 "$personalfolder"; ls -t1 "$schoolfolder") | sort -r | uniq )
-    choice=$(printf "󰎞 NEW SCHOOL NOTE\n󰎞 NEW PERSONAL NOTE\n SEARCH PERSONAL NOTES\n SEARCH SCHOOL NOTES\n SYNC TO BUTTERFLY\n%s\n" | rofiprompt "Notes menu:")
+    local choice=$(printf "󰎞 NEW KNOWLEDGE NOTE\n󰎞 NEW PERSONAL NOTE\n SEARCH KNOWLEDGE NOTES\n SEARCH PERSONAL NOTES\n SYNC TO BUTTERFLY\n" | rofiprompt "Notes menu:")
 
     case $choice in
         " SYNC TO BUTTERFLY") sync ;;
-        "󰎞 NEW SCHOOL NOTE") schoolnewnote ;;
+        "󰎞 NEW KNOWLEDGE NOTE") knowledgenewnote ;;
         "󰎞 NEW PERSONAL NOTE") personalnewnote ;;
+        " SEARCH KNOWLEDGE NOTES") search_knowledge ;;
         " SEARCH PERSONAL NOTES") search_personal ;;
-        " SEARCH SCHOOL NOTES") search_school ;;
-        *.md)
-            if [ -f "$personalfolder/$choice" ]; then
-                setsid -f wezterm start -- nvim "$personalfolder/$choice" >/dev/null 2>&1
-            elif [ -f "$schoolfolder/$choice" ]; then
-                setsid -f wezterm start -- nvim "$schoolfolder/$choice" >/dev/null 2>&1
-            fi
-            ;;
         *) exit ;;
     esac
 }
