@@ -3,8 +3,12 @@
 # --- CONFIGURATION ---
 mainvault="$HOME/valley of riches/"
 
-personalfolder="${mainvault}/Notes/"
 knowledgefolder="${mainvault}/02 - Knowledge/"
+personalfolder="${mainvault}/01 - Personal/"
+dailynotesfolder="${personalfolder}/Daily/"
+fleetingnotesfolder="${personalfolder}/Fleeting/"
+
+template_daily="${mainvault}/99 - Meta/Templates/(TEMPLATE) Daily.md"
 
 SSHPASSWORD="$(pass ssh/butterfly)"
 
@@ -35,6 +39,20 @@ rofiprompt() {
 }
 
 # --- CORE FUNCTIONS ---
+
+dailynewnote() {
+    mkdir -p "$dailynotesfolder"
+
+    local current_date=$(date +%F)
+    local daily_note_path="${dailynotesfolder}/${current_date}.md"
+
+    if [ ! -f "$daily_note_path" ]; then
+        sed "s/{{date}}/${current_date}/g" "$template_daily" > "$daily_note_path"
+    fi
+
+    setsid -f wezterm start -- nvim "$daily_note_path" >/dev/null 2>&1
+}
+
 knowledgenewnote() {
     local subjects=$(find "$knowledgefolder" -mindepth 1 -maxdepth 1 -type d -printf "%f\n")
     local subject_choice=$(printf "%s" "$subjects" | rofiprompt "Subject: ")
@@ -42,7 +60,6 @@ knowledgenewnote() {
     [ -z "$subject_choice" ] && exit 0
 
     local subject_path="${knowledgefolder}/${subject_choice}"
-
     local name=$(rofiprompt "Name: ")
     [ -z "$name" ] && name=$(date +%F_%T | tr ':' '-')
 
@@ -50,9 +67,10 @@ knowledgenewnote() {
 }
 
 personalnewnote() {
+    mkdir -p "$fleetingnotesfolder"
     local name=$(rofiprompt "Name: ")
     [ -z "$name" ] && name=$(date +%F_%T | tr ':' '-')
-    setsid -f wezterm start -- nvim "$personalfolder/$name".md >/dev/null 2>&1
+    setsid -f wezterm start -- nvim "$fleetingnotesfolder/$name.md" >/dev/null 2>&1
 }
 
 sync() {
@@ -70,18 +88,19 @@ search_knowledge() {
 }
 
 search_personal() {
-    local choice=$(find "$personalfolder" -name "*.md" -type f | sed "s|^${personalfolder}||" | rofiprompt "Search Personal Notes:")
+    local choice=$(find "$personalfolder" -name "*.md" -type f | sed "s|^${personalfolder}||" | rofiprompt "Search Personal:")
     if [ -n "$choice" ]; then
-        setsid -f wezterm start -- nvim "${personalfolder}${choice}" >/dev/null 2>&1
+        setsid -f wezterm start -- nvim "${personalfolder}/${choice}" >/dev/null 2>&1
     fi
 }
 
 # --- MAIN MENU ---
 selected() {
-    local choice=$(printf "󰎞 NEW KNOWLEDGE NOTE\n󰎞 NEW PERSONAL NOTE\n SEARCH KNOWLEDGE NOTES\n SEARCH PERSONAL NOTES\n SYNC TO BUTTERFLY\n" | rofiprompt "Notes menu:")
+    local choice=$(printf "󰸘 NEW DAILY NOTE\n󰎞 NEW KNOWLEDGE NOTE\n󰎞 NEW PERSONAL NOTE\n SEARCH KNOWLEDGE NOTES\n SEARCH PERSONAL NOTES\n SYNC TO BUTTERFLY\n" | rofiprompt "Notes menu:")
 
     case $choice in
         " SYNC TO BUTTERFLY") sync ;;
+        "󰸘 NEW DAILY NOTE") dailynewnote ;;
         "󰎞 NEW KNOWLEDGE NOTE") knowledgenewnote ;;
         "󰎞 NEW PERSONAL NOTE") personalnewnote ;;
         " SEARCH KNOWLEDGE NOTES") search_knowledge ;;
