@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # --- CONFIGURATION ---
-# The root of your new vault structure
 mainvault="$HOME/valley of riches/"
 
 personalfolder="${mainvault}/Notes/"
