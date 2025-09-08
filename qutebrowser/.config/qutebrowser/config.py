@@ -77,6 +77,7 @@ c.url.searchengines = {
     "!gh": "https://github.com/search?o=desc&q={}&s=stars",
     "!yt": "https://www.youtube.com/results?search_query={}",
     "!cal": "https://calendar.google.com/calendar/u/{}",
+    "!aur": "https://aur.archlinux.org/packages?K={}",
 }
 c.completion.open_categories = [
     "searchengines",

@@ -121,8 +121,16 @@ alias q='exit'
 
 # Zellij
 alias zel='zellij'
-alias zela='zellij a home'
 
+function zela() {
+  if zellij list-sessions | grep "home"; then
+    echo "Session 'home' found. Attaching..."
+    zellij attach home
+  else
+    echo "Session 'home' not found. Creating..."
+    zellij --session home
+  fi
+}
 alias gae='~/.local/share/bin/gae.sh'
 
 alias waybar='killall waybar 2>/dev/null; hyprctl dispatch exec waybar &'
