@@ -172,5 +172,7 @@ export PATH=$PATH:$HOME/.local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export ZEIT_DB=$HOME/.config/zeit.db
 
+setopt GLOB_DOTS
+
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
