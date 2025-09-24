@@ -5,7 +5,7 @@ ZSH=/usr/share/oh-my-zsh/
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
-plugins=( git sudo man zsh-256color zsh-autosuggestions zsh-syntax-highlighting alias-finder )
+plugins=( git sudo man fzf-tab zsh-256color zsh-completions zsh-autosuggestions zsh-syntax-highlighting alias-finder )
 source $ZSH/oh-my-zsh.sh
 
 # In case a command is not found, try to find the package that has it
@@ -159,6 +159,12 @@ zstyle ':omz:plugins:alias-finder' longer yes
 zstyle ':omz:plugins:alias-finder' exact yes
 zstyle ':omz:plugins:alias-finder' cheaper yes
 
+# FZF
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -1 --color=always $realpath'
+
 # Open manual in vim
 export MANPAGER='nvim +Man!'
 
@@ -167,3 +173,4 @@ export PATH=$PATH:$HOME/go/bin
 export ZEIT_DB=$HOME/.config/zeit.db
 
 eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
