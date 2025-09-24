@@ -5,7 +5,7 @@ ZSH=/usr/share/oh-my-zsh/
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
-plugins=( git sudo man fzf-tab zsh-256color zsh-completions zsh-autosuggestions zsh-syntax-highlighting alias-finder )
+plugins=(alias-finder fzf-tab git man sudo zsh-256color zsh-autosuggestions zsh-completions zsh-syntax-highlighting )
 source $ZSH/oh-my-zsh.sh
 
 # In case a command is not found, try to find the package that has it
