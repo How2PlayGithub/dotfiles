@@ -5,7 +5,7 @@ ZSH=/usr/share/oh-my-zsh/
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
-plugins=( git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting )
+plugins=( git sudo man zsh-256color zsh-autosuggestions zsh-syntax-highlighting alias-finder )
 source $ZSH/oh-my-zsh.sh
 
 # In case a command is not found, try to find the package that has it
@@ -111,6 +111,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+
 # Neovim
 alias v='nvim'
 alias vi='nvim .'
@@ -131,6 +132,10 @@ function zela() {
     zellij --session home
   fi
 }
+
+# Google
+alias google='ddgr'
+
 alias gae='~/.local/share/bin/gae.sh'
 
 alias waybar='killall waybar 2>/dev/null; hyprctl dispatch exec waybar &'
@@ -148,14 +153,14 @@ pokemon-colorscripts --no-title -r 1,3,6
 # Qemu setup
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
+# Alias finder
+zstyle ':omz:plugins:alias-finder' autoload yes
+zstyle ':omz:plugins:alias-finder' longer yes
+zstyle ':omz:plugins:alias-finder' exact yes
+zstyle ':omz:plugins:alias-finder' cheaper yes
+
 # Open manual in vim
 export MANPAGER='nvim +Man!'
-
-
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/kitura/.dart-cli-completion/zsh-config.zsh ]] && . /home/kitura/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
 
 export PATH=$PATH:$HOME/.local/go/bin
 export PATH=$PATH:$HOME/go/bin
