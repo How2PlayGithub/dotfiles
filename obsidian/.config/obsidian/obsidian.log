@@ -1014,3 +1014,23 @@
 2025-09-24 09:30:15 Success.
 2025-09-24 09:30:15 Latest version is 1.9.12
 2025-09-24 09:30:15 App is up to date.
+2025-12-10 23:26:06 Loading main app package /usr/lib/obsidian/obsidian.asar
+2025-12-10 23:26:06 Checking for update using Github
+2025-12-10 23:26:06 Success.
+2025-12-10 23:26:06 Latest version is 1.10.6
+2025-12-10 23:26:06 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.10.6/obsidian-1.10.6.asar.gz
+2025-12-10 23:26:07 Verifying hash & signature. Size= 9054843
+2025-12-10 23:26:07 Saving file
+2025-12-10 23:26:07 Update complete.
+2025-12-11 00:26:06 Checking for update using Github
+2025-12-11 00:26:06 Success.
+2025-12-11 00:26:06 Latest version is 1.10.6
+2025-12-11 00:26:06 An update is already downloaded.
+2026-01-25 13:22:44 Loading updated app package /home/aurevelle/.config/obsidian/obsidian-1.10.6.asar
+2026-01-25 13:22:45 Checking for update using Github
+2026-01-25 13:22:45 Success.
+2026-01-25 13:22:45 Latest version is 1.11.5
+2026-01-25 13:22:45 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.11.5/obsidian-1.11.5.asar.gz
+2026-01-25 13:22:48 Verifying hash & signature. Size= 8771203
+2026-01-25 13:22:48 Saving file
+2026-01-25 13:22:49 Update complete.

@@ -449,15 +449,15 @@
     timeout = 0
 
 [urgency_low]
-    background = "#6565A380"
-    foreground = "#CCCCFFE6"
-    frame_color = "#6565A303"
+    background = "#6573A380"
+    foreground = "#CCD8FFE6"
+    frame_color = "#6573A303"
     icon = "/home/aurevelle/.config/dunst/icons/hyprdots.svg"
     timeout = 5
 
 [urgency_normal]
-    background = "#3A506B80"
-    foreground = "#CCE3FFE6"
-    frame_color = "#3A506B03"
+    background = "#3A426B80"
+    foreground = "#CCD5FFE6"
+    frame_color = "#3A426B03"
     icon = "/home/aurevelle/.config/dunst/icons/hyprdots.svg"
     timeout = 5
