@@ -56,3 +56,31 @@ require('obsidian').setup({
     disable_frontmatter = true,
     ui = { enable = false }
 })
+
+require("lspconfig")["tinymist"].setup {
+    settings = {
+        formatterMode = "typstyle",
+        exportPdf = "onType",
+        semanticTokens = "disable"
+    }
+}
+
+vim.g.vsnip_snippet_dir = vim.fn.expand('~/.config/nvim/lua/plugins/snippets/')
+
+local ls = require("luasnip")
+
+ls.config.set_config({
+    history = true,
+    updateevents = "TextChanged,TextChangedI",
+    enable_autosnippets = true,
+})
+
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
+end, { silent = true })
+
+require("luasnip.loaders.from_lua").load({
+    paths = { vim.fn.stdpath("config") .. "/lua/plugins/snippets/" }
+})

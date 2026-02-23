@@ -138,6 +138,12 @@ alias google='ddgr'
 
 alias gae='~/.local/share/bin/gae.sh'
 
+alias temp='try-rs'
+
+alias speedtest='cloudflare-speed-cli'
+
+alias download='surge'
+
 alias waybar='killall waybar 2>/dev/null; hyprctl dispatch exec waybar &'
 
 
@@ -176,3 +182,6 @@ setopt GLOB_DOTS
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
+
+# try-rs integration
+source '/home/aurevelle/.config/try-rs/try-rs.zsh'

@@ -1,0 +1,41 @@
+{
+  "Exam Class (Adaptive)": {
+    "prefix": "exam_class",
+    "body": [
+      "class ${1:ClassName}:",
+      "\t# Attributes: ${2:attr1}: ${3:type}, ${4:attr2}: ${5:type}",
+      "\tdef __init__(self, ${6:p1}, ${7:p2}${8:, ${9:p3}}${10:, ${11:p4}}${12:, ${13:p5}}):",
+      "\t\tself.__${2} = ${6}",
+      "\t\tself.__${4} = ${7}",
+      "\t\t${14:self.__${9} = ${9}}",
+      "\t\t${15:self.__${11} = ${11}}",
+      "\t\t${16:self.__${13} = ${13}}",
+      "",
+      "\tdef get_${2}(self):",
+      "\t\treturn self.__${2}",
+      "",
+      "\tdef get_${4}(self):",
+      "\t\treturn self.__${4}",
+      "$0"
+    ],
+    "description": "Adaptive OOP Class - use Backspace on extra params to 'remove' them."
+  },
+  "Exam Read File": {
+    "prefix": "exam_read",
+    "body": [
+      "import os",
+      "filename = \"${1:data.txt}\"",
+      "if os.path.isfile(filename):",
+      "\ttry:",
+      "\t\twith open(filename, 'r') as f:",
+      "\t\t\tfor line in f:",
+      "\t\t\t\tdata = line.strip()",
+      "\t\t\t\t$0",
+      "\texcept IOError:",
+      "\t\tprint('File not found')",
+      "else:",
+      "\tprint('Path does not exist')"
+    ],
+    "description": "File Reading with Handling Error"
+  }
+}

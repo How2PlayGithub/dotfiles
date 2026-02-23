@@ -101,7 +101,8 @@
         "BetterSettings": {
             "enabled": true,
             "disableFade": true,
-            "eagerLoad": true
+            "eagerLoad": true,
+            "organizeMenu": true
         },
         "BetterUploadButton": {
             "enabled": false
@@ -256,7 +257,8 @@
         "MemberCount": {
             "enabled": true,
             "toolTip": true,
-            "memberList": true
+            "memberList": true,
+            "voiceActivity": true
         },
         "MentionAvatars": {
             "enabled": false
@@ -268,7 +270,8 @@
             "enabled": true,
             "latency": 2,
             "detectDiscordKotlin": true,
-            "showMillis": false
+            "showMillis": false,
+            "ignoreSelf": false
         },
         "MessageLinkEmbeds": {
             "enabled": false
@@ -456,7 +459,9 @@
             "enabled": true
         },
         "QuickReply": {
-            "enabled": true
+            "enabled": true,
+            "ignoreBlockedAndIgnored": true,
+            "shouldMention": 2
         },
         "ReactErrorDecoder": {
             "enabled": false
@@ -523,7 +528,7 @@
             "enabled": true
         },
         "ShowHiddenChannels": {
-            "enabled": false
+            "enabled": true
         },
         "ShowHiddenThings": {
             "enabled": false
@@ -531,7 +536,9 @@
         "ShowMeYourName": {
             "enabled": true,
             "displayNames": false,
-            "mode": "user-nick"
+            "mode": "user-nick",
+            "friendNicknames": "dms",
+            "inReplies": false
         },
         "ShowTimeoutDuration": {
             "enabled": false
@@ -586,7 +593,8 @@
         "TypingIndicator": {
             "enabled": true,
             "includeMutedChannels": false,
-            "includeCurrentChannel": true
+            "includeCurrentChannel": true,
+            "indicatorMode": 3
         },
         "TypingTweaks": {
             "enabled": true,
@@ -708,6 +716,15 @@
         },
         "DisableDeepLinks": {
             "enabled": true
+        },
+        "CopyStickerLinks": {
+            "enabled": false
+        },
+        "ImageFilename": {
+            "enabled": false
+        },
+        "MoreQuickReactions": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -720,7 +737,11 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1749362051547
+        "settingsSyncVersion": 1769817653638
     },
-    "eagerPatches": false
+    "eagerPatches": false,
+    "uiElements": {
+        "chatBarButtons": {},
+        "messagePopoverButtons": {}
+    }
 }

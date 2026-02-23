@@ -1,0 +1,327 @@
+[common]
+synced_files = []
+
+[[profiles]]
+name = "flutter"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "gtk-3.0"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "matplotlib"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "btop"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "xsettingsd"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "pulse"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "dunst"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "obsidian"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "simple-update-notifier"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "chromium"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "Code - OSS"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "menus"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "github-copilot"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "rofi"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "qt6ct"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "kde.org"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "qutebrowser"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "hypr"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "spicetify"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "nwg-look"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "ibus"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "qt5ct"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "rclone"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "yay"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "zellij"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "fastfetch"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "go"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "presenterm"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "calibre"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "themes"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "tmux"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "yazi"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "Deskflow"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "ranger"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "cef_user_data"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "procps"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "session"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "config"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "wlogout"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "spotify"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "neofetch"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "local"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "vesktop"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "OpenRGB"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "zshrc"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "cava"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "MangoHud"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "GIMP"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "hyde"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "waybar"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "com.jeffser.Alpaca"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "fvm"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "Q Calc"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "nvim"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "htop"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "dconf"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "gtk-4.0"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "wezterm"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "swaylock"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "InputLeap"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "swappy"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "cfg_backups"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "Kvantum"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "wiki-tui"
+synced_files = []
+packages = []
+
+[[profiles]]
+name = "kitty"
+synced_files = []
+packages = []

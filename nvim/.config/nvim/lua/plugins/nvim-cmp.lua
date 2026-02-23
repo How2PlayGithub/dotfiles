@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local ls = require("luasnip")
 
 local has_words_before = function()
     unpack = unpack or table.unpack
@@ -42,6 +43,7 @@ cmp.setup({
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
+            ls.lsp_expand(args.body)
         end,
     },
     mapping = {
@@ -52,6 +54,8 @@ cmp.setup({
                 feedkey("<Plug>(vsnip-expand-or-jump)", "")
             elseif has_words_before() then
                 cmp.complete()
+            elseif ls.expand_or_jumpable() then
+                ls.expand_or_jump()
             else
                 fallback()
             end
@@ -80,6 +84,7 @@ cmp.setup({
         {
             { name = "nvim_lsp" },
             { name = "vsnip" },
+            { name = "luasnip" },
             { name = "buffer" },
             { name = "path" },
             { name = "spell" },
